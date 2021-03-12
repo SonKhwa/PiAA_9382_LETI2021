@@ -1,0 +1,2 @@
+для запуска программы нужно файл main перенести в онлайн-компилятор:
+https://repl.it/@SonKhwa/TastyMiniProgrammingmacro#main.cpp
