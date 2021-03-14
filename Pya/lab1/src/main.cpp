@@ -104,6 +104,7 @@ public:
         for (int length = N / 2; length > 0; --length) {
             if (checkPossibilityToPlace(x, y, length)) {
                 curArr.emplace_back(x, y, length);
+                showArea(false);
                 square* temp_square = findEmptyPlace(x, y);
                 if (temp_square) {
                     calculateOptimization(temp_square->x, temp_square->y);
