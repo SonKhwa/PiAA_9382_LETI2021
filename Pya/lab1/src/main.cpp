@@ -23,7 +23,7 @@ public:
     }
     void showArea(bool isMin) {
         std::list<square> &viewArr = (isMin) ? minArr : curArr;
-        (isMin)? std::cout << "Найденный минимальный массив:\n" : std::cout << "Текущее заполнение массива:\n";
+        (isMin)? std::cout << "Найденный минимальный массив, после которого мы удаляем заполнение единичными квадратами до первого не единичного:\n" : std::cout << "Текущее заполнение массива:\n";
         std::cout << viewArr.size() << "\n";
         int area[N][N];
         for (int i = 0; i < N; i++) {
@@ -104,6 +104,7 @@ public:
         for (int length = N / 2; length > 0; --length) {
             if (checkPossibilityToPlace(x, y, length)) {
                 curArr.emplace_back(x, y, length);
+                showArea(false);
                 square* temp_square = findEmptyPlace(x, y);
                 if (temp_square) {
                     calculateOptimization(temp_square->x, temp_square->y);
