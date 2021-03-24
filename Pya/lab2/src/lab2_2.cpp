@@ -106,9 +106,11 @@ public:
     void defineWeightAndHeur(Point* currentPoint) {//определение эвристической оценки и веса от начальной вершины до текущей для смежных вершин
         std::cout << "Считаем вес для смежных вершин\n";
         for (auto i : listOfEdge) {
-            if (i.initVer == currentPoint && !i.finVer->isVisited) {
+            if (i.initVer == currentPoint) {
                 if (i.finVer->wei > i.weightVer + currentPoint->wei || i.finVer->wei == 0) {//при меньшей сумме характеристик вершины или их отсутствии присвоим подсчитанные раннее
                     i.finVer->wei = i.weightVer + currentPoint->wei;
+                    i.finVer->isVisited = false;
+                    std::cout << "Вес ребер от начальной до текущей для вершины " << i.finVer->ver << " посчитан: " << i.finVer->wei << "\n";
                 }
             }
         }
@@ -116,6 +118,7 @@ public:
 
     Point* findNextVertical() {//поиск следующей вершины с наименьшими характеристиками
         Point* min = nullptr;
+        std::cout << "Выбирается вершина с наименьшей суммой эвристической оценки и веса ребер от начальной вершины до текущей\n";
         for (auto i : listOfVer) {
             if ((min == nullptr || (min->heurEst + min->wei) > (i->heurEst + i->wei) ||
                  (min->heurEst + min->wei) == (i->heurEst + i->wei) && i->heurEst < min->heurEst) &&
@@ -123,6 +126,7 @@ public:
                 min = i;
             }
         }
+        std::cout << "Наименьшая вершина " << min->ver << " с " << min->heurEst + min->wei << "\n";
         return min;
     }
     Point* defineNextCurrentVer(Point* min) {//определение следующей рассматриваемой вершины
