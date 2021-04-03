@@ -1,0 +1,4 @@
+для запуска программы нужно файл main.cpp перенести в онлайн-компилятор:
+https://replit.com/@SonKhwa/SturdyTestyEngines#main.cpp
+и файл test1.txt перенести в онлайн компилятор
+проверено в степике.
