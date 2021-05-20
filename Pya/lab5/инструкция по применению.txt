@@ -1,0 +1,6 @@
+для запуска программы нужно файл lab5_1.cpp перенести в онлайн-компилятор:
+https://replit.com/@SonKhwa/PutridZestyMuse#main.cpp
+проверено в степике.
+для запуска программы нужно файл lab5_2.cpp перенести в онлайн-компилятор:
+https://replit.com/@SonKhwa/BelatedInterestingParser#main.cpp
+проверено в степике.
